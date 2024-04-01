@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>gogog {{nombre}}</h5>
+    <table>
+        <tr>
+            <th>Marca</th>
+            <th>Pais</th>
+            <th>Cantidad</th>
+            
+        </tr>
+        {% for item in Allcarros %}
+        <tr>
+            <td>{{ item.marca }}</td>
+            <td> {{ item.pais }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>{{ item.color}}</td>
+            <td>{{ item.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div>
+        {{graficas | safe}}
+    </div>
+</body>
+</html>

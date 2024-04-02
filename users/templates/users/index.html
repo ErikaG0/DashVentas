@@ -1,25 +1,30 @@
 {% extends 'plantilla/indexBase.html' %}
 {% block content %}
 
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-10"  id="Migraficas">
-        
-<script>
-    document.getElementById('Migraficas').innerHTML = `
-        {{graficaU | safe}}
-        `
-</script>
-
+<br>
+<div class="container" >
+    <div class="row">
+      <div class="col-12">
+        <div id="graficas-contenedor" style="display: flex;">
+          <div class="card" style="width: 50%;">
+            <div class="card-body" >
+                  {{graficaU | safe}}
+            </div>
+        </div>
+          <div class="card" style="width: 50%;">
+            <div class="card-body" >
+                   {{graficaG | safe}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-1"></div>
-</div>
+  </div>
+  
 
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10" id="tablas">
-        <script>
-            document.getElementById('tablas').innerHTML = `
             <table class="table">
             <thead   class="table-dark" >
                 <tr >
@@ -47,8 +52,6 @@
         
             </tbody>
         </table>
-            `;
-        </script>
     </div>
     <div class="col-1"></div>
 </div>

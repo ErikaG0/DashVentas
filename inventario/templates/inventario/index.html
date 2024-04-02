@@ -1,23 +1,29 @@
 {% extends 'plantilla/indexBase.html' %}
 {% block content %}
 
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-10"  id="Migraficas">
-        <script>
-            document.getElementById('Migraficas').innerHTML = `
-                {{graficas | safe}}
-                `
-        </script>
+<br>
+<div class="container" >
+    <div class="row">
+      <div class="col-12">
+        <div id="graficas-contenedor" style="display: flex;">
+          <div class="card" style="width: 65%;">
+            <div class="card-body" >
+                  {{graficas | safe}}
+            </div>
+        </div>
+          <div class="card" style="width: 35%;">
+            <div class="card-body" >
+                   {{grafica2 | safe}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-1"></div>
-</div>
+  </div>
 
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10"  id="tablas">
-        <script>
-            document.getElementById('tablas').innerHTML = `
             <table class="table">
             <thead class="table-dark">
                 <tr>
@@ -34,7 +40,7 @@
                     <th scope="row"></th>
                     <td>{{ item.marca }}</td>
                     <td>{{ item.modelo}}</td>
-                    <td>{{ item.precio}}</td>
+                    <td><i class="fa-solid fa-sack-dollar" style="color:rgb(57, 57, 57)"></i>  {{ item.precio}}</td>
                    
                     <td>{{ item.colorCarro}}</td>
                 </tr>
@@ -42,8 +48,7 @@
         
             </tbody>
         </table>
-            `;
-        </script>
+        
     </div>
     <div class="col-1"></div>
 </div>

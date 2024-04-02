@@ -8,22 +8,26 @@ def saludar(request) :
     
     carros_data = [
         {
-            "marca": carro.marca,
-            "modelo": carro.modelo,
+            "Marca": carro.marca,
+            "modelo": carro.get_modelo_display(),
             "colorCarro": carro.colorCarro,
-            "precio": carro.precio
+            "Precio": carro.precio
         }
         for carro in carros
     ]
     df= pd.DataFrame(carros_data)
     
 
-    grafico = px.bar(df, x="marca", y="precio", color="colorCarro", barmode="group", title="Precio por marca y color")
+    grafico = px.scatter(df, x="Marca", y="Precio", color="modelo", title="Precio por marca y color")
     miHtml = grafico.to_html( full_html = False)
+    
+    grafico2 = px.pie(df, names="colorCarro", values="Precio", title="Distribución Color")
+    miHtml2 = grafico2.to_html( full_html = False)
+    
     context = {
        "Allcarros" : carros,
-       "graficas"  : miHtml
-        
+       "graficas"  : miHtml,
+        "grafica2"  : miHtml2,
     }
    
     return render(request, "inventario/index.html",  context)

@@ -1,23 +1,26 @@
 {% extends 'plantilla/indexBase.html' %}
 {% block content %}
 
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-10"  id="Migraficas">
-        <script>
-            document.getElementById('Migraficas').innerHTML = `
-                {{graficas | safe}}
-                `
-        </script>
+<br>
+<div class="container" >
+    <div class="row">
+      <div class="col-12">
+        <div id="graficas-contenedor" style="display: flex;">
+          <div class="card" style="width: 100%;">
+            <div class="card-body" >
+                 {{graficaV | safe}}
+            </div>
+        </div>
+         
+        </div>
+      </div>
     </div>
-    <div class="col-1"></div>
-</div>
+  </div>
 
+<br>
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10 table-responsive" id="tablas">
-        <script>
-            document.getElementById('tablas').innerHTML = `
             <table class="table">
             <thead class="table-dark">
                 <tr>
@@ -39,18 +42,14 @@
             <td>{{ item.get_sucursal_display}}</td>
             <td>{{ item.usuario.nombre }} {{ item.usuario.apellido }}</td>
             <td>{{ item.usuario.get_barrio_display}}</td>
-            <td><i class="fa-solid fa-sack-dollar" style="color:rgb(57, 57, 57)"></i>  {{ item.carro_vendido.precio}}</td>
+            <td><i class="fa-solid fa-sack-dollar" style="color:rgb(57, 57, 57)"></i>  {{  item.carro_vendido.precio}}</td>
             <td>{{ item.carro_vendido.marca }}  {{ item.carro_vendido.modelo }}</td>
-          
             <td>{{ item.carro_vendido.get_colorCarro_display }}</td>
-
                 </tr>
                 {% endfor %}
-        
             </tbody>
         </table>
-            `;
-        </script>
+       
     </div>
     <div class="col-1"></div>
 </div>

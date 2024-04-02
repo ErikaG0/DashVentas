@@ -13,7 +13,7 @@ class CarroModel(models.Model):
     ('Sedane', 'Sedane'),
     ('Camioneta', 'Camioneta'),
     ('Híbrido', 'Híbrido')
-)
+    )
     modelo = models.CharField(max_length=50, choices=MODELOS, default= '' )
     precio = models.IntegerField()
     COLORES = (

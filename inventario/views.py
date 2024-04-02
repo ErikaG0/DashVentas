@@ -5,20 +5,25 @@ import pandas as pd
 
 def saludar(request) :
     carros = CarroModel.objects.all()  #consulta select * from
+    
+    carros_data = [
+        {
+            "marca": carro.marca,
+            "modelo": carro.modelo,
+            "colorCarro": carro.colorCarro,
+            "precio": carro.precio
+        }
+        for carro in carros
+    ]
+    df= pd.DataFrame(carros_data)
+    
 
-    df = pd.DataFrame({
-        "marca": ["ferrari", "mazana","pero"],
-        "cantidad":[20 , 12 ,14],
-        "pais":["arge", "brazil", "col"]
-    })
- 
-    grafico = px.bar(df, x = "marca", y="cantidad", color="pais")
+    grafico = px.bar(df, x="marca", y="precio", color="colorCarro", barmode="group", title="Precio por marca y color")
     miHtml = grafico.to_html( full_html = False)
-
     context = {
-        "nombre" : "coco",
-        "Allcarros" : carros,
-        "graficas"  : miHtml
+       "Allcarros" : carros,
+       "graficas"  : miHtml
+        
     }
+   
     return render(request, "inventario/index.html",  context)
-

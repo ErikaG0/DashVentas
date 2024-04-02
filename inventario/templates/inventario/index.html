@@ -1,32 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h5>gogog {{nombre}}</h5>
-    <table>
+{% extends 'plantilla/indexBase.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10" style="background: rebeccapurple;" id="Migraficas">
+    </div>
+    <div class="col-1"></div>
+</div>
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10" style="background:darkgoldenrod" id="tablas">
+
+    </div>
+    <div class="col-1"></div>
+</div>
+<script>
+    document.getElementById('tablas').innerHTML = `
+    <table class="table">
+    <thead>
         <tr>
-            <th>Marca</th>
-            <th>Pais</th>
-            <th>Cantidad</th>
-            
+            <th scope="col">#</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Color</th>
         </tr>
+    </thead>
+    <tbody>
         {% for item in Allcarros %}
         <tr>
+            <th scope="row"></th>
             <td>{{ item.marca }}</td>
-            <td> {{ item.pais }}</td>
-            <td>{{ item.cantidad }}</td>
-            <td>{{ item.color}}</td>
-            <td>{{ item.cantidad }}</td>
+            <td>{{ item.precio}}</td>
+            <td>{{ item.modelo}}</td>
+            <td>{{ item.colorCarro}}</td>
         </tr>
         {% endfor %}
-    </table>
 
-    <div>
+    </tbody>
+</table>
+    `;
+</script>
+
+<script>
+    document.getElementById('Migraficas').innerHTML = `
         {{graficas | safe}}
-    </div>
-</body>
-</html>
+        `
+</script>
+
+{% endblock %}

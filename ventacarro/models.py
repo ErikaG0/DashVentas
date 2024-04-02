@@ -17,6 +17,7 @@ class  VentaModel(models.Model):
     sucursal = models.CharField(max_length=10, choices= SUCURSAL)
     usuario = models.ForeignKey(UsersModel, on_delete=models.CASCADE , related_name="ID_User")
     carro_vendido = models.ForeignKey(CarroModel, on_delete=models.CASCADE, related_name="Id_Carro")
+    
     def Usuario(self):
         return f"{self.usuario.id} {self.usuario.nombre} {self.usuario.apellido}"
 

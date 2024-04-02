@@ -1,0 +1,57 @@
+{% extends 'plantilla/indexBase.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10"  id="Migraficas">
+        
+<script>
+    document.getElementById('Migraficas').innerHTML = `
+        {{graficaU | safe}}
+        `
+</script>
+
+    </div>
+    <div class="col-1"></div>
+</div>
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10" id="tablas">
+        <script>
+            document.getElementById('tablas').innerHTML = `
+            <table class="table">
+            <thead   class="table-dark" >
+                <tr >
+                    <th  id= "tituloC" scope="col">#</th>
+                    <th id= "tituloC" scope="col" >Nombre</th>
+                    <th id= "tituloC" scope="col">Apellido</th>
+                    <th id= "tituloC" scope="col">Edad</th>
+                    <th id= "tituloC"  scope="col">Pais</th>
+                    <th  id= "tituloC" scope="col">Genero</th>
+                    <th id= "tituloC" scope="col">Barrio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in Alluser %}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.apellido}}</td>
+                    <td>{{ item.edad}}</td>
+                    <td>{{ item.paisUser }}</td>
+                    <td>{{ item.gen}}</td>
+                    <td>{{ item.get_barrio_display}}</td>
+                </tr>
+                {% endfor %}
+        
+            </tbody>
+        </table>
+            `;
+        </script>
+    </div>
+    <div class="col-1"></div>
+</div>
+
+
+{% endblock %}

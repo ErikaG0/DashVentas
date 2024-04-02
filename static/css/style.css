@@ -1,3 +1,19 @@
+body{
+    font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 210;
+  font-style: normal;
+  color: rgb(57, 57, 57);
+}
+#tituloC{
+    
+    font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 281;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
 #row12{
     margin-top: 30px;  
 }
@@ -32,6 +48,3 @@ font-weight: bolder;
 
 #graficas{ margin-top: 50px;}
 #tablas{ margin-top: 10px;}
-
-
-

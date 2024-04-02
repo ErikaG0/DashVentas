@@ -3,50 +3,49 @@
 
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-10" style="background: rebeccapurple;" id="Migraficas">
+    <div class="col-10"  id="Migraficas">
+        <script>
+            document.getElementById('Migraficas').innerHTML = `
+                {{graficas | safe}}
+                `
+        </script>
     </div>
     <div class="col-1"></div>
 </div>
 
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-10" style="background:darkgoldenrod" id="tablas">
-
+    <div class="col-10"  id="tablas">
+        <script>
+            document.getElementById('tablas').innerHTML = `
+            <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th   id= "tituloC" scope="col">#</th>
+                    <th  id= "tituloC"  scope="col">Marca</th>
+                    <th  id= "tituloC" scope="col">Modelo</th>
+                    <th  id= "tituloC"  scope="col">Precio</th>
+                    <th  id= "tituloC" scope="col">Color</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in Allcarros %}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{ item.marca }}</td>
+                    <td>{{ item.modelo}}</td>
+                    <td>{{ item.precio}}</td>
+                   
+                    <td>{{ item.colorCarro}}</td>
+                </tr>
+                {% endfor %}
+        
+            </tbody>
+        </table>
+            `;
+        </script>
     </div>
     <div class="col-1"></div>
 </div>
-<script>
-    document.getElementById('tablas').innerHTML = `
-    <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Color</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in Allcarros %}
-        <tr>
-            <th scope="row"></th>
-            <td>{{ item.marca }}</td>
-            <td>{{ item.precio}}</td>
-            <td>{{ item.modelo}}</td>
-            <td>{{ item.colorCarro}}</td>
-        </tr>
-        {% endfor %}
-
-    </tbody>
-</table>
-    `;
-</script>
-
-<script>
-    document.getElementById('Migraficas').innerHTML = `
-        {{graficas | safe}}
-        `
-</script>
 
 {% endblock %}

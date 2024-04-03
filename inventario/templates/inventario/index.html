@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-
+<br>
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10"  id="tablas">
@@ -37,7 +37,7 @@
             <tbody>
                 {% for item in Allcarros %}
                 <tr>
-                    <th scope="row"></th>
+                    <th style="font-size: small; font-weight: 210;" >{{ item.id }}</th>
                     <td>{{ item.marca }}</td>
                     <td>{{ item.modelo}}</td>
                     <td><i class="fa-solid fa-sack-dollar" style="color:rgb(57, 57, 57)"></i>  {{ item.precio}}</td>

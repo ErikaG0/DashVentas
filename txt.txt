@@ -1,0 +1,28 @@
+python manage.py shell
+
+from ventacarro.models import VentaModel
+from users.models import UsersModel
+from inventario.models import CarroModel
+VentaModel.objects.create( fechaCompra='2023-12-01' , sucursal="s2", usuario=UsersModel.objects.get(id=5),  carro_vendido=CarroModel.objects.get(id=3))
+
+VentaModel.objects.create( fechaCompra='2023-11-05' , sucursal="s1", usuario=UsersModel.objects.get(id=7) , carro_vendido=CarroModel.objects.get(id=4))
+VentaModel.objects.create( fechaCompra='2023-10-23' , sucursal="s2", usuario=UsersModel.objects.get(id=8) , carro_vendido=CarroModel.objects.get(id=5))
+VentaModel.objects.create( fechaCompra='2023-09-15' , sucursal="s2", usuario=UsersModel.objects.get(id=9) , carro_vendido=CarroModel.objects.get(id=6))
+VentaModel.objects.create( fechaCompra='2023-08-13' , sucursal="s2", usuario=UsersModel.objects.get(id=10) , carro_vendido=CarroModel.objects.get(id=7))
+VentaModel.objects.create( fechaCompra='2023-07-23' , sucursal="s2", usuario=UsersModel.objects.get(id=11) , carro_vendido=CarroModel.objects.get(id=8))
+VentaModel.objects.create( fechaCompra='2023-06-16' , sucursal="s2", usuario=UsersModel.objects.get(id=12) , carro_vendido=CarroModel.objects.get(id=9))
+VentaModel.objects.create( fechaCompra='2024-02-03' , sucursal="s2", usuario=UsersModel.objects.get(id=13) , carro_vendido=CarroModel.objects.get(id=10))
+VentaModel.objects.create( fechaCompra='2024-04-17' , sucursal="s3", usuario=UsersModel.objects.get(id=14) , carro_vendido=CarroModel.objects.get(id=11))
+VentaModel.objects.create( fechaCompra='2024-01-13' , sucursal="s3", usuario=UsersModel.objects.get(id=15) , carro_vendido=CarroModel.objects.get(id=12))
+VentaModel.objects.create( fechaCompra='2023-12-20' , sucursal="s3", usuario=UsersModel.objects.get(id=16) , carro_vendido=CarroModel.objects.get(id=13))
+VentaModel.objects.create( fechaCompra='2023-12-20' , sucursal="s3", usuario=UsersModel.objects.get(id=17) , carro_vendido=CarroModel.objects.get(id=14))
+VentaModel.objects.create( fechaCompra='2023-12-20' , sucursal="s3", usuario=UsersModel.objects.get(id=18) , carro_vendido=CarroModel.objects.get(id=6))
+VentaModel.objects.create( fechaCompra='2023-12-21' , sucursal="s1", usuario=UsersModel.objects.get(id=19) , carro_vendido=CarroModel.objects.get(id=8))
+VentaModel.objects.create( fechaCompra='2023-11-19' , sucursal="s1", usuario=UsersModel.objects.get(id=20) , carro_vendido=CarroModel.objects.get(id=9))
+VentaModel.objects.create( fechaCompra='2023-11-19' , sucursal="s2", usuario=UsersModel.objects.get(id=21) , carro_vendido=CarroModel.objects.get(id=10))
+VentaModel.objects.create( fechaCompra='2023-10-12' , sucursal="s3", usuario=UsersModel.objects.get(id=22) , carro_vendido=CarroModel.objects.get(id=11))
+VentaModel.objects.create( fechaCompra='2023-09-13' , sucursal="s2", usuario=UsersModel.objects.get(id=23) , carro_vendido=CarroModel.objects.get(id=6))
+VentaModel.objects.create( fechaCompra='2023-09-21' , sucursal="s3", usuario=UsersModel.objects.get(id=24) , carro_vendido=CarroModel.objects.get(id=7))
+VentaModel.objects.create( fechaCompra='2023-09-20' , sucursal="s3", usuario=UsersModel.objects.get(id=25) , carro_vendido=CarroModel.objects.get(id=8))
+VentaModel.objects.create( fechaCompra='2023-09-28' , sucursal="s2", usuario=UsersModel.objects.get(id=26) , carro_vendido=CarroModel.objects.get(id=6))
+VentaModel.objects.create( fechaCompra='2023-09-29' , sucursal="s2", usuario=UsersModel.objects.get(id=27) , carro_vendido=CarroModel.objects.get(id=6))

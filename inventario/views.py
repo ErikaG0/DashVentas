@@ -18,10 +18,10 @@ def saludar(request) :
     df= pd.DataFrame(carros_data)
     
 
-    grafico = px.scatter(df, x="Marca", y="Precio", color="modelo", title="Precio por marca y color")
+    grafico = px.scatter(df, x="Marca", y="Precio", color="modelo", title="Precio Por Marca y Modelo")
     miHtml = grafico.to_html( full_html = False)
     
-    grafico2 = px.pie(df, names="colorCarro", values="Precio", title="Distribución Color")
+    grafico2 = px.pie(df, names="colorCarro", values="Precio", title="Colores Carros")
     miHtml2 = grafico2.to_html( full_html = False)
     
     context = {
